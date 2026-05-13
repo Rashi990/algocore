@@ -20,7 +20,7 @@ public class ArrayStack implements StackOperations{
         stack[top] = data;
     }
 
-    //Pop an element from the stack
+    //Pop an element from the stack (topmost element)
     @Override
     public int pop() {
         if (isEmpty()){

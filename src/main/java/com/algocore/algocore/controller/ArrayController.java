@@ -34,28 +34,33 @@ public class ArrayController {
     @GetMapping("/search/{data}")
     public ResponseEntity<Integer> search(@PathVariable int data){
         int index = arrayService.search(data);
-        return ResponseEntity.status(HttpStatus.OK).body(index);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(index);
     }
 
     @GetMapping("/get/{index}")
     public ResponseEntity<Integer> get(@PathVariable int index){
         int data = arrayService.get(index);
-        return ResponseEntity.status(HttpStatus.OK).body(data);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(data);
     }
 
     @GetMapping("/size")
     public ResponseEntity<Integer> size(){
-        return ResponseEntity.status(HttpStatus.OK).body(arrayService.size());
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(arrayService.size());
     }
 
     @DeleteMapping("/delete/{index}")
     public ResponseEntity<String> delete(@PathVariable int index){
         arrayService.delete(index);
-        return ResponseEntity.status(HttpStatus.OK).body("Deleted element at index : " + index);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Deleted element at index : " + index);
     }
 
     @GetMapping("/print")
     public ResponseEntity<int[]> printArr(){
-        return ResponseEntity.status(HttpStatus.OK).body(arrayService.printArr());
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(arrayService.printArr());
     }
 }
